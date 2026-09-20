@@ -8,7 +8,10 @@ app = Flask(__name__)
 CORS(app)
 
 # Load trained model
-model = tf.keras.models.load_model("pet_breed_classifier.keras")
+import os
+
+MODEL_PATH = os.path.join(os.path.dirname(__file__), "pet_breed_classifier.keras")
+model = tf.keras.models.load_model(MODEL_PATH)
 
 # Exact class order used during training
 class_names = [
