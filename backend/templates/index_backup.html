@@ -1,0 +1,127 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CNN Image Classifier</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="card">
+
+            <h1>🧠 CNN Image Classifier</h1>
+
+            <p class="subtitle">
+                Upload an image and let the CNN model classify it.
+            </p>
+
+
+            <!-- Upload Section -->
+
+            <div class="upload-box">
+
+                <div class="upload-icon">
+                    📷
+                </div>
+
+                <h3>Upload Image</h3>
+
+                <p>
+                    Select an image to classify
+                </p>
+
+                <label
+                    for="imageInput"
+                    class="choose-btn">
+                    Choose Image
+                </label>
+
+                <input
+                    type="file"
+                    id="imageInput"
+                    accept="image/*"
+                    hidden
+                >
+
+            </div>
+
+
+            <!-- Image Preview -->
+
+            <div
+                class="preview-container"
+                id="previewContainer">
+
+                <h3>Image Preview</h3>
+
+                <img
+                    id="previewImage"
+                    alt="Selected Image"
+                >
+
+            </div>
+
+
+            <!-- Predict Button -->
+
+            <button
+                id="predictBtn"
+                class="predict-btn"
+                disabled>
+
+                🔍 Predict Image
+
+            </button>
+
+
+            <!-- Loading -->
+
+            <div
+                class="loading"
+                id="loading">
+
+                <div class="spinner"></div>
+
+                <p>
+                    CNN is analyzing the image...
+                </p>
+
+            </div>
+
+
+            <!-- Result -->
+
+            <div
+                class="result"
+                id="result">
+
+                <h2>Prediction Result</h2>
+
+                <p>
+                    Class:
+                    <strong id="predictionText">-</strong>
+                </p>
+
+                <p>
+                    Confidence:
+                    <strong id="confidenceText">-</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
